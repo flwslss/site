@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ООО "ДОСТИЖЕНИЕ"</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Логотип ООО 'ДОСТИЖЕНИЕ'">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Главная секция -->
+    <section class="hero">
+        <div class="container">
+            <h2>Консалтинг и управление с 2022 года</h2>
+            <p>Профессиональные решения для вашего бизнеса</p>
+            <button id="openFormButton">Оставить заявку</button>
+            
+        </div>
+    </section>
+
+    <!-- Форма обратной связи -->
+    <div class="contact-form-popup" id="contactFormPopup">
+        <div class="popup-content">
+            <button type="butn" class="close-button" id="closeForm">×</button>
+            <h3>Оставить заявку</h3>
+            <form action="submit_form.php" method="POST">
+                <label for="name">Имя*</label>
+                <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+
+                <label for="surname">Фамилия*</label>
+                <input type="text" id="surname" name="surname" placeholder="Введите вашу фамилию" required>
+
+                <label for="phone">Телефон*</label>
+                <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" required>
+
+                <label for="service">Выберите услугу*</label>
+                <select id="service" name="service" required>
+                    <option value="">-- Выберите услугу --</option>
+                    <option value="consulting">Бизнес-консалтинг</option>
+                    <option value="legal">Юридические услуги</option>
+                    <option value="accounting">Бухгалтерские услуги</option>
+                </select>
+
+                <button type="submit">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="s1">
+        <div class="container">
+            <p>© <span id="currentYear"></span> ООО "ДОСТИЖЕНИЕ". Все права защищены.</p>
+            <p>Адрес: г. Краснодар, ул. им. Героя Яцкова И.В., д. 15, к. 2, кв. 574</p>
+            <p>Email: DOSTIGENIE23@YANDEX.RU</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

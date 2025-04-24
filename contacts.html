@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - ООО "ДОСТИЖЕНИЕ"</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=fc3dfd5f-134c-428b-86d6-95ff1634610c
+    &lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Логотип ООО 'ДОСТИЖЕНИЕ'">
+               
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contacts">
+        <div class="container">
+            <h2>Контакты</h2>
+            <p><strong>Адрес:</strong> г. Краснодар, ул. им. Героя Яцкова И.В., д. 15, к. 2, кв. 574</p>
+            <p><strong>Телефон:</strong> +7 (905) 405-39-84</p>
+            <p><strong>Email:</strong> DOSTIGENIE23@YANDEX.RU</p>
+            <div id="map" style="width: 100%; height: 450px;"></div>
+            <script type="text/javascript">
+                ymaps.ready(function () {
+                    var myMap = new ymaps.Map('map', {
+                        center: [45.070474, 39.040240], // Координаты метки (широта, долгота)
+                        zoom: 16 // Масштаб карты
+                    });
+
+                    // Добавление метки
+                    var myPlacemark = new ymaps.Placemark([45.070474, 39.040240], {
+                        hintContent: 'ООО "ДОСТИЖЕНИЕ"', // Подсказка при наведении
+                        balloonContent: 'г. Краснодар, ул. им. Героя Яцкова И.В., д. 15, к. 2, кв. 574' // Текст в балуне
+                    });
+
+                    // Добавляем метку на карту
+                    myMap.geoObjects.add(myPlacemark);
+                });
+            </script>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 ООО "ДОСТИЖЕНИЕ". Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>

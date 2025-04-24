@@ -1,0 +1,380 @@
+/* Общие стили */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #5C371B;
+    background: #FFF8F0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #8B5A2B;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+h2:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #8B5A2B;
+    margin: 20px auto 0;
+}
+
+/* Шапка */
+header {
+    background: linear-gradient(135deg, #E3D5CA 0%, #D2B48C 100%);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 80px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+}
+
+header nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 18px;
+    color: #5C371B;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background: rgba(139, 90, 43, 0.1);
+    color: #8B5A2B;
+    transform: translateY(-2px);
+}
+
+/* Главная страница */
+.hero {
+    background: url('https://wallpapertag.com/wallpaper/full/1/a/1/350829-widescreen-website-background-1920x1080-windows-xp.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 150px 20px;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero h2 {
+    color: white;
+    font-size: 48px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2:after {
+    background: white;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero button {
+    background: #8B5A2B;
+    border: none;
+    padding: 15px 30px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.hero button:hover {
+    background: #5C371B;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* О компании */
+.about {
+    padding: 80px 0;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+.company-info {
+    background: #FFF8F0;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 0 5px 20px rgba(139, 90, 43, 0.08);
+}
+
+.company-info p {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+/* Услуги */
+.services {
+    padding: 80px 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.service-card {
+    background: #FFF8F0;
+    border-radius: 12px;
+    padding: 40px 30px;
+    box-shadow: 0 5px 20px rgba(139, 90, 43, 0.08);
+    border-top: 4px solid #8B5A2B;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(139, 90, 43, 0.15);
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.service-card ul {
+    padding-left: 20px;
+}
+
+.service-card li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 25px;
+    list-style-type: none;
+}
+
+.service-card li:before {
+    content: "•";
+    color: #8B5A2B;
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: -3px;
+}
+
+/* Контакты */
+.contacts {
+    padding: 80px 0;
+}
+
+.contact-info {
+    background: #FFF8F0;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    box-shadow: 0 5px 20px rgba(139, 90, 43, 0.08);
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+#map {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(139, 90, 43, 0.08);
+}
+
+/* Форма */
+.contact-form-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #8B5A2B;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-button:hover {
+    color: #5C371B;
+    transform: rotate(90deg);
+}
+
+.popup-content h3 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.popup-content label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.popup-content input,
+.popup-content select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.popup-content input:focus,
+.popup-content select:focus {
+    border-color: #8B5A2B;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(139, 90, 43, 0.2);
+}
+
+.popup-content button[type="submit"] {
+    background: #8B5A2B;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.popup-content button[type="submit"]:hover {
+    background: #5C371B;
+    transform: translateY(-2px);
+}
+
+/* Подвал */
+footer {
+    background: #8B5A2B;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+    
+    header .logo {
+        margin-bottom: 15px;
+    }
+    
+    header nav ul {
+        gap: 10px;
+    }
+    
+    header nav ul li a {
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+    
+    .hero {
+        padding: 100px 20px;
+    }
+    
+    .hero h2 {
+        font-size: 36px;
+    }
+    
+    h2 {
+        font-size: 30px;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
