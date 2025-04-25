@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О компании - ООО "ДОСТИЖЕНИЕ"</title>
+    <title>ООО "Достижение"</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icon.png" type="image/png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js"></script>
 </head>
 <body>
+    <!-- Шапка -->
     <header>
         <div class="container">
             <div class="logo">
                 <img src="logo.png" alt="Логотип ООО 'ДОСТИЖЕНИЕ'">
-              
             </div>
             <nav>
                 <ul>
@@ -24,20 +28,50 @@
         </div>
     </header>
 
-    <section class="about">
+    <!-- Главная секция -->
+    <section class="hero">
         <div class="container">
-            <h2>О компании</h2>
-            <p>ООО "ДОСТИЖЕНИЕ" — профессиональная компания, оказывающая услуги в сфере бизнес-консалтинга, юридического и бухгалтерского сопровождения. Мы помогаем нашим клиентам достигать их целей с 2022 года.</p>
-            <p><strong>Руководитель:</strong> Полтавский Иван Александрович</p>
-            <p><strong>ИНН:</strong> 2311334176 | <strong>КПП:</strong> 231101001</p>
-            <p><strong>ОГРН:</strong> 1222300025914</p>
+            <h2>Консалтинг и управление с 2022 года</h2>
+            <p>Профессиональные решения для вашего бизнеса</p>
+            <button id="openFormButton">Оставить заявку</button>
+            
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 ООО "ДОСТИЖЕНИЕ". Все права защищены.</p>
+    <!-- Форма обратной связи -->
+    <div class="contact-form-popup" id="contactFormPopup">
+        <div class="popup-content">
+            <button type="butn" class="close-button" id="closeForm">×</button>
+            <h3>Оставить заявку</h3>
+            <form action="submit_form.php" method="POST">
+                <label for="name">Имя*</label>
+                <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+
+                <label for="surname">Фамилия*</label>
+                <input type="text" id="surname" name="surname" placeholder="Введите вашу фамилию" required>
+
+                <label for="phone">Телефон*</label>
+                <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}">
+
+                <label for="service">Выберите услугу*</label>
+                <select id="service" name="service" required>
+                    <option value="">-- Выберите услугу --</option>
+                    <option value="consulting">Бизнес-консалтинг</option>
+                    <option value="legal">Юридические услуги</option>
+                    <option value="accounting">Бухгалтерские услуги</option>
+                </select>
+
+                <button type="submit">Отправить заявку</button>
+            </form>
         </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="s1">
+        <div class="container">
+            <p>© <span id="currentYear"></span> ООО "Достижение". Все права защищены.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
