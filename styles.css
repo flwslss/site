@@ -1,4 +1,29 @@
 /* Общие стили */
+
+/* Анимация перехода между страницами */
+html {
+    scroll-behavior: smooth;
+    animation: fadeIn 0.9s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFF8F0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
 body {
     font-family: 'Lato', sans-serif;
     margin: 0;
@@ -55,6 +80,7 @@ header .logo img {
     height: 80px;
     transition: all 0.3s ease;
     filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+    margin-left: -160px;
 }
 
 header nav ul {
@@ -63,6 +89,7 @@ header nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    margin-right: -220px;
 }
 
 header nav ul li a {
@@ -245,7 +272,7 @@ header nav ul li a:hover {
 
 /* Форма */
 .contact-form-popup {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
@@ -255,6 +282,14 @@ header nav ul li a:hover {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.contact-form-popup.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 .popup-content {
@@ -265,6 +300,14 @@ header nav ul li a:hover {
     max-width: 500px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     position: relative;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.32, 0.72, 0, 1) 0.1s;
+}
+
+.contact-form-popup.active .popup-content {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .close-button {
@@ -276,13 +319,42 @@ header nav ul li a:hover {
     font-size: 24px;
     color: #8B5A2B;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all -0.3s ease;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
+
 
 .close-button:hover {
     color: #5C371B;
-    transform: rotate(90deg);
+    background: rgba(139, 90, 43, 0.1);
 }
+.popup-content label,
+.popup-content input,
+.popup-content select,
+.popup-content button {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.6s ease;
+}
+
+.contact-form-popup.active .popup-content label,
+.contact-form-popup.active .popup-content input,
+.contact-form-popup.active .popup-content select,
+.contact-form-popup.active .popup-content button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.popup-content label { transition-delay: 0.2s; }
+.popup-content input { transition-delay: 0.3s; }
+.popup-content select { transition-delay: 0.4s; }
+.popup-content button { transition-delay: 0.5s; }
 
 .popup-content h3 {
     margin-bottom: 30px;
@@ -295,7 +367,16 @@ header nav ul li a:hover {
     font-weight: 600;
 }
 
-.popup-content input,
+.popup-content input {
+    width: 93.5%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
 .popup-content select {
     width: 100%;
     padding: 12px 15px;
@@ -324,6 +405,7 @@ header nav ul li a:hover {
     cursor: pointer;
     width: 100%;
     transition: all 0.3s ease;
+    margin-top: 20px;
 }
 
 .popup-content button[type="submit"]:hover {
@@ -341,6 +423,89 @@ footer {
 
 footer p {
     margin: 5px 0;
+}
+
+/* Стили для документов */
+.documents {
+    padding: 60px 0;
+    background: rgba(139, 90, 43, 0.05);
+    margin-top: 40px;
+}
+
+.document-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.doc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    background: #8B5A2B;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.doc-btn span {
+    position: relative;
+    z-index: 2;
+}
+
+.doc-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.doc-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #5C371B;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    z-index: 1;
+}
+
+.doc-btn:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    border-color: rgba(255,255,255,0.2);
+}
+
+.doc-btn:hover::before {
+    transform: translateY(0);
+}
+
+.doc-btn:hover svg {
+    transform: translateX(3px);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .document-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .doc-btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
 }
 
 /* Адаптивность */
