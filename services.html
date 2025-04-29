@@ -4,77 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Услуги - ООО "Достижение"</title>
+    <meta name="description" content="Профессиональные консалтинговые услуги от ООО 'Достижение' - бизнес-консалтинг, юридические и бухгалтерские услуги">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="https://github.com/flwslss/site/blob/main/icon.png?raw=true" type="image/png">
-    <style>
-        /* Стили для блоков услуг */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin: 60px auto;
-            max-width: 1200px;
-            padding: 0 20px;
-        }
-        
-        .service-card {
-            background: #FFF8F0;
-            border-radius: 12px;
-            padding: 40px 30px;
-            box-shadow: 0 5px 20px rgba(139, 90, 43, 0.08);
-            border-top: 4px solid #8B5A2B;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        
-        .service-card:hover {
-            box-shadow: 0 8px 25px rgba(139, 90, 43, 0.15);
-            transform: translateY(-5px);
-        }
-        
-        .service-card h3 {
-            color: #8B5A2B;
-            font-size: 26px;
-            margin-bottom: 20px;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .service-card ul {
-            padding-left: 20px;
-            line-height: 1.8;
-            color: #5C371B;
-        }
-        
-        .service-card li {
-            margin-bottom: 12px;
-            position: relative;
-            list-style-type: none;
-            padding-left: 25px;
-        }
-        
-        .service-card li:before {
-            content: "•";
-            color: #8B5A2B;
-            font-size: 24px;
-            position: absolute;
-            left: 0;
-            top: -3px;
-        }
-        
-        @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .service-card {
-                padding: 30px 20px;
-            }
-        }
-    </style>
 </head>
 <body>
+    <!-- Шапка -->
     <header>
-        <div class="container">
+        <div class="container header-container">
             <div class="logo">
                 <img src="logo.png" alt="Логотип ООО 'ДОСТИЖЕНИЕ'">
             </div>
@@ -82,20 +20,29 @@
                 <ul>
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="about.html">О компании</a></li>
-                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="services.html" class="active">Услуги</a></li>
                     <li><a href="contacts.html">Контакты</a></li>
                 </ul>
             </nav>
+            <div class="header-contacts">
+                <a href="tel:+79054053984" class="phone-link">+7 (905) 405-39-84</a>
+                <p class="work-hours">Пн-Пт: 9:00 - 18:00</p>
+            </div>
         </div>
     </header>
 
-    <section class="services">
+    <!-- Основное содержимое -->
+    <section class="section section-light">
         <div class="container">
-            <h2>Наши услуги</h2>
+            <h2 class="fade-in">Наши услуги</h2>
+            <p class="section-description fade-in delay-1">Комплексные решения для вашего бизнеса</p>
             
             <div class="services-grid">
-                <!-- Блок 1: Бизнес-консалтинг -->
-                <div class="service-card">
+                <!-- Бизнес-консалтинг -->
+                <div class="service-card fade-in delay-1" id="consulting">
+                    <div class="service-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1570/1570887.png" alt="Бизнес-консалтинг">
+                    </div>
                     <h3>Бизнес-консалтинг</h3>
                     <ul>
                         <li>Стратегическое планирование развития бизнеса</li>
@@ -105,10 +52,14 @@
                         <li>Реорганизация и реструктуризация компаний</li>
                         <li>Подбор и оценка управленческого персонала</li>
                     </ul>
+                    <button class="button service-button">Заказать услугу</button>
                 </div>
                 
-                <!-- Блок 2: Юридические услуги -->
-                <div class="service-card">
+                <!-- Юридические услуги -->
+                <div class="service-card fade-in delay-2" id="legal">
+                    <div class="service-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2282/2282272.png" alt="Юридические услуги">
+                    </div>
                     <h3>Юридические услуги</h3>
                     <ul>
                         <li>Регистрация и ликвидация юридических лиц</li>
@@ -118,10 +69,14 @@
                         <li>Трудовое право и кадровое делопроизводство</li>
                         <li>Сопровождение сделок с недвижимостью</li>
                     </ul>
+                    <button class="button service-button">Заказать услугу</button>
                 </div>
                 
-                <!-- Блок 3: Бухгалтерские услуги -->
-                <div class="service-card">
+                <!-- Бухгалтерские услуги -->
+                <div class="service-card fade-in delay-3" id="accounting">
+                    <div class="service-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3142/3142029.png" alt="Бухгалтерские услуги">
+                    </div>
                     <h3>Бухгалтерские услуги</h3>
                     <ul>
                         <li>Полное ведение бухгалтерского учета</li>
@@ -131,15 +86,147 @@
                         <li>Восстановление бухгалтерского учета</li>
                         <li>Консультирование по вопросам учета</li>
                     </ul>
+                    <button class="button service-button">Заказать услугу</button>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Дополнительная информация -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="fade-in">Как мы работаем</h2>
+            <div class="work-steps fade-in delay-1">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Консультация</h3>
+                    <p>Бесплатная первичная консультация для определения ваших потребностей</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Анализ</h3>
+                    <p>Детальный анализ текущей ситуации и разработка предложений</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Реализация</h3>
+                    <p>Внедрение решений и сопровождение на всех этапах</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Результат</h3>
+                    <p>Достижение поставленных целей и контроль результатов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма обратной связи -->
+    <div class="contact-form-popup" id="contactFormPopup">
+        <div class="popup-content">
+            <button type="button" class="close-button" id="closeForm">×</button>
+            <h3>Оставить заявку</h3>
+            <form action="submit_form.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Имя*</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Введите ваше имя" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Телефон*</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="+7 (___) ___-__-__" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Выберите услугу*</label>
+                    <select id="service" name="service" class="form-control" required>
+                        <option value="">-- Выберите услугу --</option>
+                        <option value="consulting">Бизнес-консалтинг</option>
+                        <option value="legal">Юридические услуги</option>
+                        <option value="accounting">Бухгалтерские услуги</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Комментарий</label>
+                    <textarea id="message" name="message" class="form-control" placeholder="Опишите ваш запрос"></textarea>
+                </div>
+
+                <div class="privacy-policy">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <label for="privacy">Я согласен на обработку персональных данных</label>
+                </div>
+
+                <button type="submit" class="button submit-button">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Подвал -->
     <footer>
         <div class="container">
-            <p>© 2025 ООО "Достижение". Все права защищены.</p>
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>О компании</h4>
+                    <p>ООО "Достижение" - профессиональный консалтинговый центр, оказывающий комплексные услуги для бизнеса с 2022 года.</p>
+                    <div class="social-links">
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook"></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li><a href="#consulting">Бизнес-консалтинг</a></li>
+                        <li><a href="#legal">Юридические услуги</a></li>
+                        <li><a href="#accounting">Бухгалтерские услуги</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Контакты</h4>
+                    <address>
+                        <p>г. Краснодар, ул. им. Героя Яцкова И.В., д. 15, к. 2, кв. 574</p>
+                        <p><a href="tel:+79054053984">+7 (905) 405-39-84</a></p>
+                        <p><a href="mailto:DOSTIGENIE23@YANDEX.RU">DOSTIGENIE23@YANDEX.RU</a></p>
+                    </address>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Режим работы</h4>
+                    <p>Понедельник - Пятница: 9:00 - 18:00</p>
+                    <p>Суббота - Воскресенье: выходной</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© <span id="currentYear"></span> ООО "Достижение". Все права защищены.</p>
+                <a href="privacy.html">Политика конфиденциальности</a>
+            </div>
         </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Обработка клика по кнопкам "Заказать услугу"
+        $(document).ready(function() {
+            $('.service-button').click(function() {
+                const serviceCard = $(this).closest('.service-card');
+                const serviceName = serviceCard.find('h3').text();
+                
+                $('#contactFormPopup').addClass('active');
+                $('#service').val(serviceCard.attr('id'));
+                
+                // Прокрутка к форме
+                $('html, body').animate({
+                    scrollTop: $('#contactFormPopup').offset().top - 100
+                }, 500);
+            });
+        });
+    </script>
 </body>
 </html>
