@@ -4,60 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты - ООО "Достижение"</title>
+    <meta name="description" content="Контактная информация ООО 'Достижение' - профессиональные консалтинговые услуги">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=fc3dfd5f-134c-428b-86d6-95ff1634610c
-    &lang=ru_RU" type="text/javascript"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=fc3dfd5f-134c-428b-86d6-95ff1634610c&lang=ru_RU" type="text/javascript"></script>
     <link rel="icon" href="https://github.com/flwslss/site/blob/main/icon.png?raw=true" type="image/png">
 </head>
 <body>
+    <!-- Шапка -->
     <header>
-        <div class="container">
+        <div class="container header-container">
             <div class="logo">
                 <img src="logo.png" alt="Логотип ООО 'ДОСТИЖЕНИЕ'">
-               
             </div>
             <nav>
                 <ul>
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="about.html">О компании</a></li>
                     <li><a href="services.html">Услуги</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="contacts.html" class="active">Контакты</a></li>
                 </ul>
             </nav>
+            <div class="header-contacts">
+                <a href="tel:+79054053984" class="phone-link">+7 (905) 405-39-84</a>
+                <p class="work-hours">Пн-Пт: 9:00 - 18:00</p>
+            </div>
         </div>
     </header>
 
-    <section class="contacts">
+    <!-- Основное содержимое -->
+    <section class="section section-light">
         <div class="container">
-            <h2>Контакты</h2>
-            <p><strong>Адрес:</strong> г. Краснодар, ул. им. Героя Яцкова И.В., д. 15, к. 2, кв. 574</p>
-            <p><strong>Телефон:</strong> +7 (905) 405-39-84</p>
-            <p><strong>Email:</strong> DOSTIGENIE23@YANDEX.RU</p>
-            <div id="map" style="width: 100%; height: 450px;"></div>
-            <script type="text/javascript">
-                ymaps.ready(function () {
-                    var myMap = new ymaps.Map('map', {
-                        center: [45.070474, 39.040240], // Координаты метки (широта, долгота)
-                        zoom: 16 // Масштаб карты
-                    });
-
-                    // Добавление метки
-                    var myPlacemark = new ymaps.Placemark([45.070474, 39.040240], {
-                        hintContent: 'ООО "ДОСТИЖЕНИЕ"', // Подсказка при наведении
-                        balloonContent: 'г. Краснодар, ул. им. Героя Яцкова И.В., д. 15, к. 2, кв. 574' // Текст в балуне
-                    });
-
-                    // Добавляем метку на карту
-                    myMap.geoObjects.add(myPlacemark);
-                });
-            </script>
+            <h2 class="fade-in">Контакты</h2>
+            
+            <div class="contact-grid fade-in delay-1">
+                <div class="contact-info">
+                    <h3>Как с нами связаться</h3>
+                    <address>
+                        <p><strong>Адрес:</strong> г. Краснодар, ул. им. Героя Яцкова И.В., д. 15, к. 2, кв. 574</p>
+                        <p><strong>Телефон:</strong> <a href="tel:+79054053984">+7 (905) 405-39-84</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:DOSTIGENIE23@YANDEX.RU">DOSTIGENIE23@YANDEX.RU</a></p>
+                        <p><strong>Режим работы:</strong> Пн-Пт: 9:00 - 18:00</p>
+                    </address>
+                    
+                    <div class="contact-buttons">
+                        <button id="openFormButton" class="button">Оставить заявку</button>
+                        <a href="tel:+79054053984" class="button outline">Позвонить нам</a>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <div id="map" style="width: 100%; height: 100%; min-height: 400px;"></div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Форма обратной связи -->
+    <div class="contact-form-popup" id="contactFormPopup">
+        <div class="popup-content">
+            <button type="button" class="close-button" id="closeForm">×</button>
+            <h3>Оставить заявку</h3>
+            <form action="submit_form.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Имя*</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Введите ваше имя" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Телефон*</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="+7 (___) ___-__-__" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Выберите услугу*</label>
+                    <select id="service" name="service" class="form-control" required>
+                        <option value="">-- Выберите услугу --</option>
+                        <option value="consulting">Бизнес-консалтинг</option>
+                        <option value="legal">Юридические услуги</option>
+                        <option value="accounting">Бухгалтерские услуги</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Комментарий</label>
+                    <textarea id="message" name="message" class="form-control" placeholder="Опишите ваш запрос"></textarea>
+                </div>
+
+                <div class="privacy-policy">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <label for="privacy">Я согласен на обработку персональных данных</label>
+                </div>
+
+                <button type="submit" class="button submit-button">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Подвал -->
     <footer>
         <div class="container">
-            <p>© 2025 ООО "Достижение". Все права защищены.</p>
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>О компании</h4>
+                    <p>ООО "Достижение" - профессиональный консалтинговый центр, оказывающий комплексные услуги для бизнеса с 2022 года.</p>
+                    <div class="social-links">
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook"></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li><a href="services.html#consulting">Бизнес-консалтинг</a></li>
+                        <li><a href="services.html#legal">Юридические услуги</a></li>
+                        <li><a href="services.html#accounting">Бухгалтерские услуги</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Контакты</h4>
+                    <address>
+                        <p>г. Краснодар, ул. им. Героя Яцкова И.В., д. 15, к. 2, кв. 574</p>
+                        <p><a href="tel:+79054053984">+7 (905) 405-39-84</a></p>
+                        <p><a href="mailto:DOSTIGENIE23@YANDEX.RU">DOSTIGENIE23@YANDEX.RU</a></p>
+                    </address>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Режим работы</h4>
+                    <p>Понедельник - Пятница: 9:00 - 18:00</p>
+                    <p>Суббота - Воскресенье: выходной</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© <span id="currentYear"></span> ООО "Достижение". Все права защищены.</p>
+                <a href="privacy.html">Политика конфиденциальности</a>
+            </div>
         </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        ymaps.ready(function () {
+            var myMap = new ymaps.Map('map', {
+                center: [45.070474, 39.040240],
+                zoom: 16,
+                controls: ['zoomControl']
+            });
+
+            var myPlacemark = new ymaps.Placemark([45.070474, 39.040240], {
+                hintContent: 'ООО "ДОСТИЖЕНИЕ"',
+                balloonContent: 'г. Краснодар, ул. им. Героя Яцкова И.В., д. 15, к. 2, кв. 574'
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: 'https://cdn-icons-png.flaticon.com/512/2776/2776067.png',
+                iconImageSize: [40, 40],
+                iconImageOffset: [-20, -40]
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+            myMap.behaviors.disable('scrollZoom');
+        });
+    </script>
 </body>
 </html>
