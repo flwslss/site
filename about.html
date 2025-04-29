@@ -4,74 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О компании - ООО "Достижение"</title>
+    <meta name="description" content="Информация о компании ООО 'Достижение' - профессиональные консалтинговые услуги для бизнеса">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="https://github.com/flwslss/site/blob/main/icon.png?raw=true" type="image/png">
 </head>
 <body>
+    <!-- Шапка -->
     <header>
-        <div class="container">
+        <div class="container header-container">
             <div class="logo">
                 <img src="logo.png" alt="Логотип ООО 'ДОСТИЖЕНИЕ'">
-              
             </div>
             <nav>
                 <ul>
                     <li><a href="index.html">Главная</a></li>
-                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="about.html" class="active">О компании</a></li>
                     <li><a href="services.html">Услуги</a></li>
                     <li><a href="contacts.html">Контакты</a></li>
                 </ul>
             </nav>
+            <div class="header-contacts">
+                <a href="tel:+79054053984" class="phone-link">+7 (905) 405-39-84</a>
+                <p class="work-hours">Пн-Пт: 9:00 - 18:00</p>
+            </div>
         </div>
     </header>
-    <section class="documents">
+
+    <!-- Основное содержимое -->
+    <section class="section section-light">
         <div class="container">
-            <h2>Наши документы</h2>
-            <div class="document-buttons">
-                <a href="https://drive.google.com/file/d/1Y1DQ6GzSr6_1eDkcAXnwHU39fp23qPYW/view" 
-                   class="doc-btn" 
-                   target="_blank">
-                   <span>Лицензия</span>
-                   <svg viewBox="0 0 24 24" width="20" height="20">
-                       <path fill="currentColor" d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z M8,15V13H16V15H8M8,11V9H13V11H8M8,19V17H16V19H8Z"/>
-                   </svg>
+            <h2 class="fade-in">О компании</h2>
+            
+            <div class="about-section fade-in delay-1">
+                <div class="about-content">
+                    <p>ООО "Достижение" — профессиональная компания, оказывающая услуги в сфере бизнес-консалтинга, юридического и бухгалтерского сопровождения. Мы помогаем нашим клиентам достигать их целей с 2022 года.</p>
+                    
+                    <div class="company-details">
+                        <h3>Наши реквизиты</h3>
+                        <p><strong>Руководитель:</strong> Полтавский Иван Александрович</p>
+                        <p><strong>ИНН:</strong> 2311334176</p>
+                        <p><strong>КПП:</strong> 231101001</p>
+                        <p><strong>ОГРН:</strong> 1222300025914</p>
+                        <p><strong>Адрес:</strong> г. Краснодар, ул. им. Героя Яцкова И.В., д. 15, к. 2, кв. 574</p>
+                    </div>
+                    
+                    <a href="services.html" class="button">Наши услуги</a>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Наша команда">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Документы -->
+    <section class="section section-dark documents">
+        <div class="container">
+            <h2 class="fade-in">Наши документы</h2>
+            <p class="section-description fade-in delay-1">Официальные документы компании</p>
+            
+            <div class="document-buttons fade-in delay-2">
+                <a href="https://drive.google.com/file/d/1Y1DQ6GzSr6_1eDkcAXnwHU39fp23qPYW/view" class="doc-btn" target="_blank">
+                    <span>Лицензия</span>
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z M8,15V13H16V15H8M8,11V9H13V11H8M8,19V17H16V19H8Z"/>
+                    </svg>
                 </a>
                 
-                <a href="https://drive.google.com/file/d/1ChF8nm03ra7BWis2gwoec4fCPEGDXPwk/view" 
-                   class="doc-btn" 
-                   target="_blank">
-                   <span>Сертификат</span>
-                   <svg viewBox="0 0 24 24" width="20" height="20">
-                       <path fill="currentColor" d="M4,3C2.89,3 2,3.89 2,5V15C2,16.11 2.89,17 4,17H12V22L15,19L18,22V17H20C21.11,17 22,16.11 22,15V8L22,6V5C22,3.89 21.11,3 20,3H16V3H4M12,5L15,7L18,5V8.5L21,10L18,11.5V15L15,13L12,15V11.5L9,10L12,8.5V5M4,5H9V7H4V5M4,9H7V11H4V9M4,13H9V15H4V13Z"/>
-                   </svg>
+                <a href="https://drive.google.com/file/d/1ChF8nm03ra7BWis2gwoec4fCPEGDXPwk/view" class="doc-btn" target="_blank">
+                    <span>Сертификат</span>
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M4,3C2.89,3 2,3.89 2,5V15C2,16.11 2.89,17 4,17H12V22L15,19L18,22V17H20C21.11,17 22,16.11 22,15V8L22,6V5C22,3.89 21.11,3 20,3H16V3H4M12,5L15,7L18,5V8.5L21,10L18,11.5V15L15,13L12,15V11.5L9,10L12,8.5V5M4,5H9V7H4V5M4,9H7V11H4V9M4,13H9V15H4V13Z"/>
+                    </svg>
                 </a>
                 
-                <a href="https://drive.google.com/file/d/1f_MC27qPJ80lOhfX1-5hQQAHiQ4IRES9/view" 
-                   class="doc-btn" 
-                   target="_blank">
-                   <span>Аккредитация</span>
-                   <svg viewBox="0 0 24 24" width="20" height="20">
-                       <path fill="currentColor" d="M12,3L2,12H5V20H19V12H22L12,3M12,7.7L16,11.2V18H14V14H10V18H8V11.2L12,7.7M12,8.8L9,11.5H11V16H13V11.5H15L12,8.8Z"/>
-                   </svg>
+                <a href="https://drive.google.com/file/d/1f_MC27qPJ80lOhfX1-5hQQAHiQ4IRES9/view" class="doc-btn" target="_blank">
+                    <span>Аккредитация</span>
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M12,3L2,12H5V20H19V12H22L12,3M12,7.7L16,11.2V18H14V14H10V18H8V11.2L12,7.7M12,8.8L9,11.5H11V16H13V11.5H15L12,8.8Z"/>
+                    </svg>
                 </a>
             </div>
         </div>
     </section>
-    
-    <section class="about">
-        <div class="container">
-            <h2>О компании</h2>
-            <p>ООО "Достижение" — профессиональная компания, оказывающая услуги в сфере бизнес-консалтинга, юридического и бухгалтерского сопровождения. Мы помогаем нашим клиентам достигать их целей с 2022 года.</p>
-            <p><strong>Руководитель:</strong> Полтавский Иван Александрович</p>
-            <p><strong>ИНН:</strong> 2311334176 | <strong>КПП:</strong> 231101001</p>
-            <p><strong>ОГРН:</strong> 1222300025914</p>
-        </div>
-    </section>
 
+    <!-- Подвал -->
     <footer>
         <div class="container">
-            <p>© 2025 ООО "Достижение". Все права защищены.</p>
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>О компании</h4>
+                    <p>ООО "Достижение" - профессиональный консалтинговый центр, оказывающий комплексные услуги для бизнеса с 2022 года.</p>
+                    <div class="social-links">
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook"></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li><a href="services.html#consulting">Бизнес-консалтинг</a></li>
+                        <li><a href="services.html#legal">Юридические услуги</a></li>
+                        <li><a href="services.html#accounting">Бухгалтерские услуги</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Контакты</h4>
+                    <address>
+                        <p>г. Краснодар, ул. им. Героя Яцкова И.В., д. 15, к. 2, кв. 574</p>
+                        <p><a href="tel:+79054053984">+7 (905) 405-39-84</a></p>
+                        <p><a href="mailto:DOSTIGENIE23@YANDEX.RU">DOSTIGENIE23@YANDEX.RU</a></p>
+                    </address>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Режим работы</h4>
+                    <p>Понедельник - Пятница: 9:00 - 18:00</p>
+                    <p>Суббота - Воскресенье: выходной</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© <span id="currentYear"></span> ООО "Достижение". Все права защищены.</p>
+                <a href="privacy.html">Политика конфиденциальности</a>
+            </div>
         </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
